@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+ <title>Movie Recommendation</title>
+</head>
+
+
+<body style="background-color:lavenderblush">
+    
+    <center>
+    <h1>Welcome to Movie Recommendation</h1>
+    <h3>Let us suggest you some good movies based on your preference</h3>
+
+    <form method="POST" action="/submit">
+    <label><b>Select a Movie: </b></label>
+    <input name = "mov" list = "mov"> 
+    <datalist id = "mov">
+        {% for mv in list_of_movies %}
+        <option value= "{{mv}}">
+        {% endfor %}
+    
+    
+    </datalist>  
+    <input type = "submit">
+    </form>
+    <br>
+
+    
+    <h3>Movies recommended based on <b><i>{{mov}}</i></b>: </h3> 
+    
+    
+    {% for mov in movies %}
+    <h4><i>{{mov}}</i></h4>
+    {% endfor %}
+
+    
+    </center>
+</body>
+
+</html>
